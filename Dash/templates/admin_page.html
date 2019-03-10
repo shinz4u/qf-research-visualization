@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+    <meta charset="utf-8">
+	<title>Admin Page</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+{#	<link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">#}
+	<link rel="shortcut icon" href="{{ url_for('static', filename='images/kindi_logo.png') }}">
+
+</head>
+
+<header>
+	<div class="navbar-header">
+      <a class="navbar-brand" href="/">
+	  <img style="max-width:120px; margin-top: -7px;" src="{{ url_for('static', filename='images/kindi_logo.png') }}">
+	  </a>
+    </div>
+
+
+	<div class = "container-fluid">
+
+		<a href="/dashboard/"><button type="button" class="btn btn-primary" aria-label="Left Align" style="margin-top: 5px; margin-bottom: 5px; height: 44px; margin-right: 15px">
+		  <span class="fa fa-off" aria-hidden="true"></span> Start Learning
+		</button></a>
+
+
+	<ul class="nav navbar-nav navbar-right">
+
+		  <div style="margin-right: 10px; margin-left: 15px; margin-top: 5px; margin-bottom: 5px;"  class="container-fluid">
+
+			<a href="/support-donate/"> <span class="fa fa-heart" aria-hidden="true"></span> Support   </a>
+{#                <span class="fa fa-star" aria-hidden="true"></span> Star#}
+
+			<a role="presentation" data-toggle="modal" data-target="#exampleModal" href="#"><span class="fa fa-log-in"></span> Login   </a>
+
+			<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			  <div class="modal-dialog">
+				<div class="modal-content">
+				  <div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+					<h4 class="modal-title" id="exampleModalLabel">Login</h4>
+				  </div>
+				  <div class="modal-body">
+                      <div class="container-fluid">
+                          <form action="" class="form-inline" method="post">
+                              <input type="text" class="form-control" placeholder="Username" name="username" value="">
+                              <input type="password" class="form-control" placeholder="Password" name="password" value="">
+                              <input class="btn btn-primary" type="submit" value="Login">
+						  </form>
+
+							<div class="container">
+                                <br>
+                                <p>No account? <a href='/register'>Register here</a>.</p>
+                                <br>
+                            </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+              <a role="presentation" class="active" data-toggle="modal" data-target="#register" href="#"><span class="fa fa-pencil"></span> Sign up</a>
+              <h5>
+
+              </h5>
+		<div class="modal fade" id="register" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+				<h4 class="modal-title" id="exampleModalLabel">Register</h4>
+			  </div>
+			  <div class="modal-body">
+				  <div class="container">
+
+						<form method=post action="/register">
+						  <dl>
+
+                              <dt><label for="username">Username</label>
+                              <dd><input id="username" name="username" type="text" value="">
+
+                              </dd>
+
+
+                              <dt><label for="email">Email Address</label>
+                              <dd><input id="email" name="email" type="text" value="">
+
+                              </dd>
+
+
+                              <dt><label for="password">New Password</label>
+                              <dd><input id="password" name="password" type="password" value="">
+
+                              </dd>
+
+
+                              <dt><label for="confirm">Repeat Password</label>
+                              <dd><input id="confirm" name="confirm" type="password" value="">
+
+                              </dd>
+
+
+                              <dt><label for="accept_tos">I accept the <a href="/about/tos" target="blank">Terms of Service</a> and <a href="/about/privacy-policy" target="blank">Privacy Notice</a> (updated Jan 22, 2015)</label>
+                              <dd><input id="accept_tos" name="accept_tos" type="checkbox" value="y">
+
+                              </dd>
+
+						  </dl>
+						  <p><input type=submit value=Register></p>
+						</form>
+
+				</div>
+			  </div>
+
+			</div>
+		  </div>
+		</div>
+	  </div>
+      </ul>
+	</ul>
+	</div>
+
+</header>
+
+<body>
+
+
+<div class="container">
+
+    <h4>Admin Page</h4>
+    Table : User Table of QNRF Visualization Dashboard
+
+    {#<table class="table">#}
+    {##}
+    {#    <thead>#}
+    {#      <tr>#}
+    {#        <th>Firstname</th>#}
+    {#        <th>Lastname</th>#}
+    {#        <th>Email</th>#}
+    {#          <th><span style="float:right"><button id="but_add">Add New Person</button></span></th>#}
+    {#      </tr>#}
+    {#    </thead>#}
+    {#    <tbody>#}
+    {#      <tr class="bg-success">#}
+    {#        <td>Default</td>#}
+    {#        <td>Defaultson</td>#}
+    {#        <td>def@somemail.com</td>#}
+    {#        <td><button type="button" class="close" aria-label="Close"><span aria-hidden="true">x</span></button></td>#}
+    {#          <td><button type="button" class="close" aria-label="Close">x</button></td>#}
+    {#      </tr>#}
+    {#      <tr class="bg-success">#}
+    {#        <td>Success</td>#}
+    {#        <td>Doe</td>#}
+    {#        <td>john@example.com</td>#}
+    {#        <td><button type="button" class="close" aria-label="Close">x</button></td>#}
+    {#      </tr>#}
+    {#      <tr class="bg-info">#}
+    {#        <td>Danger</td>#}
+    {#        <td>Moe</td>#}
+    {#        <td>mary@example.com</td>#}
+    {#        <td><button type="button" class="close" aria-label="Close">x</button></td>#}
+    {#      </tr>#}
+    {#      <tr class="bg-info">#}
+    {#        <td>Info</td>#}
+    {#        <td>Dooley</td>#}
+    {#        <td>july@example.com</td>#}
+    {#        <td><button type="button" class="close" aria-label="Close">x</button></td>#}
+    {#      </tr>#}
+    {#      <tr class="bg-warning">#}
+    {#        <td>Warning</td>#}
+    {#        <td>Refs</td>#}
+    {#        <td>bo@example.com</td>#}
+    {#        <td><button type="button" class="close" aria-label="Close">x</button></td>#}
+    {#      </tr>#}
+    {#      <tr class="bg-active">#}
+    {#        <td>Active</td>#}
+    {#        <td>Activeson</td>#}
+    {#        <td>act@example.com</td>#}
+    {#        <td><button type="button" class="close" aria-label="Close">x</button></td>#}
+    {#      </tr>#}
+    {#    </tbody>#}
+    {#</table>#}
+
+    {#### TABLE WHICH CONTAINS ALL THE USERNAME AND PASSWORD###}
+
+
+    <div class="col-md-12 col-md-offset-10">
+    <table class="table table-striped table-bordered table-list">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Password</th>
+            <th>Admin Privileges</th>
+    {#        <th><span style="float:right"><button id="but_add">Add New Person</button></span></th>#}
+            <th style="text-align:right"><button type="button" class="btn btn-sm btn-primary btn-create">Add a Person</button></th>
+        </tr>
+        </thead>
+
+        <tbody>
+
+        {% for user in users %}
+            {% for key, value in user.items() %}
+                <tr>
+                    <td>{{ key }}</td>
+                    <td>{{ value[0] }}</td>
+                    <td>{{ value[1] }}</td>
+                    {% if value[2] == 1 %}
+                        <td>YES</td>
+                    {% else %}
+                        <td>NO</td>
+                    {% endif %}
+
+                <form action="{{ url_for('admin_page') }}" method="GET">
+                    <td align="center"><button class="btn btn-danger" name="delete-val" value={{ key }}><em class="fa fa-trash"></em></button></td>
+{#                    <td align="center"><button name="delete-val" value={{ key }} type="submit" class="btn btn-danger">WOH</button></td>#}
+                </form>
+    {#                <td><button id="{{ key }}" type="button" class="close" aria-label="Close">x</button></td>#}
+                </tr>
+            {% endfor %}
+        {% endfor %}
+        </tbody>
+
+    </table>
+    </div>
+
+    <form action="{{ url_for('admin_page')}}" method="get">
+    Choose your favorite subject:
+    <button name="subject" type="submit" value="fav_HTML">HTML</button>
+    <button name="subject" type="submit" value="fav_CSS">CSS</button>
+    </form>
+
+</div>
+
+
+{##}
+{#<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>#}
+{##}
+{#<div class="container">#}
+{#    <div class="row">#}
+{##}
+{#    <p></p>#}
+{#    <h1>Bootstrap Table Panel with Pagination</h1>#}
+{#    <p>A simple example of how-to put a bordered table within a panel. Responsive, place holders in header/footer for buttons or pagination.</p>#}
+{#    <p>Follow me <a href="https://twitter.com/asked_io" target="_new">@asked_io</a> & <a href="https://asked.io/" target="_new">asked.io</a>.</p>#}
+{#    <p> </p><p> </p>#}
+{##}
+{#        <div class="col-md-10 col-md-offset-1">#}
+{##}
+{#            <div class="panel panel-default panel-table">#}
+{#              <div class="panel-heading">#}
+{#                <div class="row">#}
+{#                  <div class="col col-xs-6">#}
+{#                    <h3 class="panel-title">Panel Heading</h3>#}
+{#                  </div>#}
+{#                  <div class="col col-xs-6 text-right">#}
+{#                    <button type="button" class="btn btn-sm btn-primary btn-create">Create New</button>#}
+{#                  </div>#}
+{#                </div>#}
+{#              </div>#}
+{#              <div class="panel-body">#}
+{#                <table class="table table-striped table-bordered table-list">#}
+{#                  <thead>#}
+{#                    <tr>#}
+{#                        <th><em class="fa fa-cog"></em></th>#}
+{#                        <th class="hidden-xs">ID</th>#}
+{#                        <th>Name</th>#}
+{#                        <th>Email</th>#}
+{#                    </tr>#}
+{#                  </thead>#}
+{#                  <tbody>#}
+{#                          <tr>#}
+{#                            <td align="center">#}
+{#                              <a class="btn btn-default"><em class="fa fa-pencil"></em></a>#}
+{#                              <a class="btn btn-danger"><em class="fa fa-trash"></em></a>#}
+{#                            </td>#}
+{#                            <td class="hidden-xs">1</td>#}
+{#                            <td>John Doe</td>#}
+{#                            <td>johndoe@example.com</td>#}
+{#                          </tr>#}
+{#                        </tbody>#}
+{#                </table>#}
+{##}
+{#              </div>#}
+{#              <div class="panel-footer">#}
+{#                <div class="row">#}
+{#                  <div class="col col-xs-4">Page 1 of 5#}
+{#                  </div>#}
+{#                  <div class="col col-xs-8">#}
+{#                    <ul class="pagination hidden-xs pull-right">#}
+{#                      <li><a href="#">1</a></li>#}
+{#                      <li><a href="#">2</a></li>#}
+{#                      <li><a href="#">3</a></li>#}
+{#                      <li><a href="#">4</a></li>#}
+{#                      <li><a href="#">5</a></li>#}
+{#                    </ul>#}
+{#                    <ul class="pagination visible-xs pull-right">#}
+{#                        <li><a href="#">«</a></li>#}
+{#                        <li><a href="#">»</a></li>#}
+{#                    </ul>#}
+{#                  </div>#}
+{#                </div>#}
+{#              </div>#}
+{#            </div>#}
+{##}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
+
+
+</body>
+
+</html>
+

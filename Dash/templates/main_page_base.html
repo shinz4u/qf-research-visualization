@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% block head %}
+    <link rel="stylesheet" href="style.css" />
+    <title>{% block title %}{% endblock %}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+{#	<link rel="icon" type="image/png" href="login_page/images/icons/favicon.ico"/>#}
+{#    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/mainpage.css') }}">#}
+    <link rel="icon" type="image/png" href="{{ url_for('static',filename='images/icons/favicon.ico') }}">
+<!--===============================================================================================-->
+{#	<link rel="stylesheet" type="text/css" href="login_page/vendor/bootstrap/css/bootstrap.min.css">#}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='vendor/bootstrap/css/bootstrap.min.css') }}">
+<!--===============================================================================================-->
+{#	<link rel="stylesheet" type="text/css" href="login_page/fonts/font-awesome-4.7.0/css/font-awesome.min.css">#}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+<!--===============================================================================================-->
+{#	<link rel="stylesheet" type="text/css" href="login_page/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">#}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='fonts/Linearicons-Free-v1.0.0/icon-font.min.css') }}">
+
+<!--===============================================================================================-->
+{#	<link rel="stylesheet" type="text/css" href="login_page/vendor/animate/animate.css">#}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='vendor/animate/animate.css') }}">
+<!--===============================================================================================-->
+{#	<link rel="stylesheet" type="text/css" href="login_page/vendor/css-hamburgers/hamburgers.min.css">#}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='vendor/css-hamburgers/hamburgers.min.css') }}">
+<!--===============================================================================================-->
+{#	<link rel="stylesheet" type="text/css" href="login_page/vendor/animsition/css/animsition.min.css">#}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='vendor/animsition/css/animsition.min.css') }}">
+<!--===============================================================================================-->
+{#	<link rel="stylesheet" type="text/css" href="login_page/vendor/select2/select2.min.css">#}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='vendor/select2/select2.min.css') }}">
+<!--===============================================================================================-->
+{#	<link rel="stylesheet" type="text/css" href="login_page/vendor/daterangepicker/daterangepicker.css">#}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='vendor/daterangepicker/daterangepicker.css') }}">
+<!--===============================================================================================-->
+{#	<link rel="stylesheet" type="text/css" href="login_page/css/util.css">#}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/util.css') }}">
+{#	<link rel="stylesheet" type="text/css" href="login_page/css/main.css">#}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/main.css') }}">
+<!--===============================================================================================-->
+    {% endblock %}
+</head>
+
+
+<body>
+
+
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">
+
+                <div id="content">{% block content %}
+        {#    This is the place where the child classes write stuff up.#}
+        {#    This is the place where the child classes write stuff up.#}
+        {#    This is the place where the child classes write stuff up.#}
+                                    {% endblock %}</div>
+			</div>
+		</div>
+	</div>
+
+
+
+<!--===============================================================================================-->
+{#	<script src="login_page/vendor/jquery/jquery-3.2.1.min.js"></script>#}
+    <script type="text/javascript" src="{{ url_for('static',filename='vendor/jquery/jquery-3.2.1.min.js') }}"></script>
+<!--===============================================================================================-->
+{#	<script src="login_page/vendor/animsition/js/animsition.min.js"></script>#}
+    <script type="text/javascript" src="{{ url_for('static',filename='vendor/animsition/js/animsition.min.js') }}"></script>
+<!--===============================================================================================-->
+{#	<script src="login_page/vendor/bootstrap/js/popper.js"></script>#}
+{#	<script src="login_page/vendor/bootstrap/js/bootstrap.min.js"></script>#}
+
+    <script type="text/javascript" src="{{ url_for('static',filename='vendor/bootstrap/js/popper.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static',filename='vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+<!--===============================================================================================-->
+{#	<script src="login_page/vendor/select2/select2.min.js"></script>#}
+    <script type="text/javascript" src="{{ url_for('static',filename='vendor/select2/select2.min.js') }}"></script>
+<!--===============================================================================================-->
+{#	<script src="login_page/vendor/daterangepicker/moment.min.js"></script>#}
+{#	<script src="login_page/vendor/daterangepicker/daterangepicker.js"></script>#}
+
+    <script type="text/javascript" src="{{ url_for('static',filename='vendor/daterangepicker/moment.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static',filename='vendor/daterangepicker/daterangepicker.js') }}"></script>
+<!--===============================================================================================-->
+{#	<script src="login_page/vendor/countdowntime/countdowntime.js"></script>#}
+    <script type="text/javascript" src="{{ url_for('static',filename='vendor/countdowntime/countdowntime.js') }}"></script>
+<!--===============================================================================================-->
+{#	<script src="login_page/js/main.js"></script>#}
+    <script type="text/javascript" src="{{ url_for('static',filename='js/main.js') }}"></script>
+
+
+    <div id="footer">
+        {% block footer %}
+        &copy; Copyright 2018 by <a href="http://kindi.qu.edu.qa/research/kindi/">KINDI Centre for Computing Research</a>.
+        {% endblock %}
+    </div>
+</body>
+
+
+</html>

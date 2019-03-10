@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>QNRF LOGIN PAGE</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--===============================================================================================-->	
+{#	<link rel="icon" type="image/png" href="login_page/images/icons/favicon.ico"/>#}
+{#    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/mainpage.css') }}">#}
+    <link rel="icon" type="image/png" href="{{ url_for('static',filename='images/icons/favicon.ico') }}">
+<!--===============================================================================================-->
+{#	<link rel="stylesheet" type="text/css" href="login_page/vendor/bootstrap/css/bootstrap.min.css">#}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='vendor/bootstrap/css/bootstrap.min.css') }}">
+<!--===============================================================================================-->
+{#	<link rel="stylesheet" type="text/css" href="login_page/fonts/font-awesome-4.7.0/css/font-awesome.min.css">#}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+<!--===============================================================================================-->
+{#	<link rel="stylesheet" type="text/css" href="login_page/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">#}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='fonts/Linearicons-Free-v1.0.0/icon-font.min.css') }}">
+
+<!--===============================================================================================-->
+{#	<link rel="stylesheet" type="text/css" href="login_page/vendor/animate/animate.css">#}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='vendor/animate/animate.css') }}">
+<!--===============================================================================================-->	
+{#	<link rel="stylesheet" type="text/css" href="login_page/vendor/css-hamburgers/hamburgers.min.css">#}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='vendor/css-hamburgers/hamburgers.min.css') }}">
+<!--===============================================================================================-->
+{#	<link rel="stylesheet" type="text/css" href="login_page/vendor/animsition/css/animsition.min.css">#}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='vendor/animsition/css/animsition.min.css') }}">
+<!--===============================================================================================-->
+{#	<link rel="stylesheet" type="text/css" href="login_page/vendor/select2/select2.min.css">#}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='vendor/select2/select2.min.css') }}">
+<!--===============================================================================================-->	
+{#	<link rel="stylesheet" type="text/css" href="login_page/vendor/daterangepicker/daterangepicker.css">#}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='vendor/daterangepicker/daterangepicker.css') }}">
+<!--===============================================================================================-->
+{#	<link rel="stylesheet" type="text/css" href="login_page/css/util.css">#}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/util.css') }}">
+{#	<link rel="stylesheet" type="text/css" href="login_page/css/main.css">#}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/main.css') }}">
+<!--===============================================================================================-->
+</head>
+{% block body %}
+<body>
+	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">
+				<form class="login100-form validate-form", method="post">
+					<span class="login100-form-title p-b-33">
+						Account Login
+					</span>
+
+					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+                        <input id=uname-box class="input100" type=text name=username placeholder="Username" value="{{request.form.username }}">
+{#						<input id=username class="input100" type="text" name="email" placeholder="Email">#}
+						<span class="focus-input100-1"></span>
+						<span class="focus-input100-2"></span>
+					</div>
+
+					<div class="wrap-input100 rs1 validate-input" data-validate="Password is required">
+                        <input class="input100" id=pwd-box type=password placeholder="Password" name=password>
+{#						<input class="input100" type="password" name="pass" placeholder="Password">#}
+						<span class="focus-input100-1"></span>
+						<span class="focus-input100-2"></span>
+					</div>
+
+					<div class="container-login100-form-btn m-t-20">
+                            <input class="login100-form-btn" id=login-button type=submit value=Login>
+					</div>
+
+{#					<div class="text-center p-t-45 p-b-4">#}
+{#						<span class="txt1">#}
+{#							Forgot#}
+{#						</span>#}
+{##}
+{#						<a href="#" class="txt2 hov1">#}
+{#							Username / Password?#}
+{#						</a>#}
+{#					</div>#}
+
+					<div class="text-center">
+						<span class="txt1">
+							Admin account?
+						</span>
+
+						<a href="{{ url_for('admin')}}" class="txt2 hov1">
+							Sign in here
+						</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+
+<!--===============================================================================================-->
+{#	<script src="login_page/vendor/jquery/jquery-3.2.1.min.js"></script>#}
+    <script type="text/javascript" src="{{ url_for('static',filename='vendor/jquery/jquery-3.2.1.min.js') }}"></script>
+<!--===============================================================================================-->
+{#	<script src="login_page/vendor/animsition/js/animsition.min.js"></script>#}
+    <script type="text/javascript" src="{{ url_for('static',filename='vendor/animsition/js/animsition.min.js') }}"></script>
+<!--===============================================================================================-->
+{#	<script src="login_page/vendor/bootstrap/js/popper.js"></script>#}
+{#	<script src="login_page/vendor/bootstrap/js/bootstrap.min.js"></script>#}
+
+    <script type="text/javascript" src="{{ url_for('static',filename='vendor/bootstrap/js/popper.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static',filename='vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+<!--===============================================================================================-->
+{#	<script src="login_page/vendor/select2/select2.min.js"></script>#}
+    <script type="text/javascript" src="{{ url_for('static',filename='vendor/select2/select2.min.js') }}"></script>
+<!--===============================================================================================-->
+{#	<script src="login_page/vendor/daterangepicker/moment.min.js"></script>#}
+{#	<script src="login_page/vendor/daterangepicker/daterangepicker.js"></script>#}
+
+    <script type="text/javascript" src="{{ url_for('static',filename='vendor/daterangepicker/moment.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static',filename='vendor/daterangepicker/daterangepicker.js') }}"></script>
+<!--===============================================================================================-->
+{#	<script src="login_page/vendor/countdowntime/countdowntime.js"></script>#}
+    <script type="text/javascript" src="{{ url_for('static',filename='vendor/countdowntime/countdowntime.js') }}"></script>
+<!--===============================================================================================-->
+{#	<script src="login_page/js/main.js"></script>#}
+    <script type="text/javascript" src="{{ url_for('static',filename='js/main.js') }}"></script>
+
+</body>
+{% endblock %}
+
+</html>
