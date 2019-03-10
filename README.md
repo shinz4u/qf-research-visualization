@@ -1,45 +1,67 @@
-**Edit a file, create a new file, and clone from Bitbucket in under 2 minutes**
+## QF Research Data Visualization in Dashboard
 
-When you're done, you can delete the content in this README and update the file with details for others getting started with your repository.
+This software facilitate the visualization of research data on QNRF website. Provides information regarding personnel and research projects in the state of Qatar in an easy interpretable way for decision makers to find professors working in a research area and make funding decisions as necessary.
 
-*We recommend that you open this README in another tab as you perform the tasks below. You can [watch our video](https://youtu.be/0ocf7u76WSo) for a full demo of all the steps in this tutorial. Open the video in a new tab to avoid leaving Bitbucket.*
+This project utilises Python, Dash (upon flask) and ElasticSearch for the webpage.
 
----
+Scrapy is heavily utilized in order to crawl the QNRF website for data collection.
 
-## Edit a file
 
-You’ll start by editing this README file to learn how to edit a file in Bitbucket.
+## Software Requirements
 
-1. Click **Source** on the left side.
-2. Click the README.md link from the list of files.
-3. Click the **Edit** button.
-4. Delete the following text: *Delete this line to make a change to the README from Bitbucket.*
-5. After making your change, click **Commit** and then **Commit** again in the dialog. The commit page will open and you’ll see the change you just made.
-6. Go back to the **Source** page.
+Python3 >= 3.6  
+ElasticSearch - https://www.elastic.co/downloads/elasticsearch  
+Bitbucket Git (to pull code) or Dropbox(No VCS here)  
 
----
+Postman - to debug elasticsearch queries  
 
-## Create a file
 
-Next, you’ll add a new file to this repository.
 
-1. Click the **New file** button at the top of the **Source** page.
-2. Give the file a filename of **contributors.txt**.
-3. Enter your name in the empty file space.
-4. Click **Commit** and then **Commit** again in the dialog.
-5. Go back to the **Source** page.
+Python Library Requirements
 
-Before you move on, go ahead and explore the repository. You've already seen the **Source** page, but check out the **Commits**, **Branches**, and **Settings** pages.
+Scrapy==1.5.0  
+elasticsearch==6.3.0    
+plotly==3.1.1  
+numpy==1.12.1  
+dash==0.26.3  
+Jinja2==2.10  
+networkx==1.11  
+Flask==0.12  
+SQLAlchemy==1.1.9  
+Flask_Login==0.4.1  
+pandas==0.19.2  
+dash_html_components==0.11.0  
+dash_auth==1.1.2  
+dash_core_components==0.28.0  
+elasticsearch_dsl==6.1.0  
 
----
 
-## Clone a repository
+Installation Procedure
 
-Use these steps to clone from SourceTree, our client for using the repository command-line free. Cloning allows you to work on your files locally. If you don't yet have SourceTree, [download and install first](https://www.sourcetreeapp.com/). If you prefer to clone from the command line, see [Clone a repository](https://confluence.atlassian.com/x/4whODQ).
+Install elasticsearch  
+Install scrapy and above said libraries.  
 
-1. You’ll see the clone button under the **Source** heading. Click that button.
-2. Now click **Check out in SourceTree**. You may need to create a SourceTree account or log in.
-3. When you see the **Clone New** dialog in SourceTree, update the destination path and name if you’d like to and then click **Clone**.
-4. Open the directory you just created to see your repository’s files.
+Make sure elasticsearch is working properly - eg: adding a new index, deleting index etc  
+https://www.elastic.co/guide/en/elasticsearch/reference/current/getting-started.html  
 
-Now that you're more familiar with your Bitbucket repository, go ahead and add a new file locally. You can [push your change back to Bitbucket with SourceTree](https://confluence.atlassian.com/x/iqyBMg), or you can [add, commit,](https://confluence.atlassian.com/x/8QhODQ) and [push from the command line](https://confluence.atlassian.com/x/NQ0zDQ).
+Usual errors:  
+1) /Common error  - During ElasticSearch start up  
+Fix: Install Java 8 or higher with 64 bit,
+Also add java to path.  more info here https://discuss.elastic.co/t/cannot-start-elasticsearch/129779  
+
+2) encoding char error for pandas or any python open file.  
+Fix: In mac change encoding to -'utf-8'  
+Fix: In windows change encoding to 'cp1252' for all read_csv for pandas  
+
+
+### TO RUN IN WINDOWS
+
+1) open terminal as administrator
+2) go to QNRF_Visualization\elasticsearch-6.4.0
+3) type in <bin\elasticsearch.bat>
+4) Open Anaconda Prompt or a terminal which can run python3.  
+5) cd to folder qnrf-research-visualization/Dash/  
+6) type in <python app.py> i.e run app.py  
+8) open localhost:8050
+9) enter username: hello password:world  
+10) Use the QNRF Application.
